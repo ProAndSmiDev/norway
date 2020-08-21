@@ -1,6 +1,5 @@
 @import variables
 @import mixins
-@import animations
 
 @include font-family('Open Sans', 'OpenSans', 'OpenSansLight', 300)
 @include font-family('Open Sans', 'OpenSans', 'OpenSansRegular', 400)
@@ -96,6 +95,7 @@ input, textarea, select, button
 
 .title
   @include indents($mb: 20px)
+  font-family: 'Open Sans', 'Arial', 'Roboto', sans-serif
   @include font-styles($size: $default-title-size, $color: $default-title-color)
 
 @import ./components/header
