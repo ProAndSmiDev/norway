@@ -1,0 +1,7 @@
+nav.nav
+    button.__burger(type="button" title="Открыть меню")
+      span
+    ul.nav-list
+        each val in header.menu
+            li.__item
+                a(href=val.link).__link= val.title

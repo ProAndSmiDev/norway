@@ -2,6 +2,14 @@
 @import mixins
 @import animations
 
+@include font-family('Open Sans', 'OpenSans', 'OpenSansLight', 300)
+@include font-family('Open Sans', 'OpenSans', 'OpenSansRegular', 400)
+@include font-family('Open Sans', 'OpenSans', 'OpenSansBold', 700)
+@include font-family('Montserrat', 'Montserrat', 'MontserratRegular', 400)
+@include font-family('Montserrat', 'Montserrat', 'MontserratMedium', 600)
+@include font-family('Montserrat', 'Montserrat', 'MontserratBold', 700)
+
+
 *,
 *:after,
 *:before
@@ -17,10 +25,15 @@ body
     padding: 0 0 20px
   min-height: 100vh
   @include font-styles($default-size, $default-color, $default-weight, $default-lh, $default-family)
+  background:
+    image: url('../img/bg/site-bg.jpg')
 
 .wrapper
   display: flex
-  width: $wrapper
+  @include media($width: phone)
+    width: 100%
+  @include media($width: desktop)
+    width: $wrapper
   align-items: center
   flex-flow: row wrap
   justify-content: center
@@ -46,12 +59,6 @@ a
     text-decoration: none
     &:before
       width: 100%
-
-input
-  @include input-placeholder
-    @include font-styles($size: $default-placeholder-size, $color: $default-placeholder-color)
-  border: 0
-  background: $bg-default-input
 
 ul, ol
   display: flex
@@ -90,3 +97,8 @@ input, textarea, select, button
 .title
   @include indents($mb: 20px)
   @include font-styles($size: $default-title-size, $color: $default-title-color)
+
+@import ./components/header
+
+@import ./components/content/main-block
+@import ./components/content/reviews
